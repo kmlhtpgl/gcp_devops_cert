@@ -2,8 +2,11 @@
 What should you do?
 
 Grant the team members the IAM role of logging.configWriter on Cloud IAM.
+
 Configure Access Context Manager to allow only these members to export logs.
+
 Create and grant a custom IAM role with the permissions logging.sinks.list and logging.sink.get.
+
 Create an Organizational Policy in Cloud IAM to allow only these members to create log exports.
 Answer(s): A
 
@@ -15,8 +18,11 @@ The logging.configWriter role grants permissions to create, update, and delete l
 What should you do?
 
 Configure the VPC as a Shared VPC Host project.
+
 Configure your network services on the Standard Tier.
+
 Configure your Kubernetes duster as a Private Cluster.
+
 Configure a Google Cloud HTTP Load Balancer as Ingress.
 Answer(s): B
 
@@ -27,8 +33,11 @@ The Standard Tier network service offers lower network costs than the Premium Ti
 What should you do?
 
 Configure the horizontal pod autoscaler to use the average response time from the Liveness and Readiness probes.
+
 Configure the vertical pod autoscaler in GKE and enable the cluster autoscaler to scale the cluster as pods expand.
+
 Install the Stackdriver custom metrics adapter and configure a horizontal pod autoscaler to use the number of requests provided by the GCLB.
+
 Expose the NGINX stats endpoint and configure the horizontal pod autoscaler to use the request metrics exposed by the NGINX deployment.
 Answer(s): C
 
