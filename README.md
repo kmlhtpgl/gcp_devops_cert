@@ -240,4 +240,4 @@ Use Stackdriver Logging to export application logs to BigOuery. aggregate logs p
 Answer(s): A
 
 Explanation:
-https://cloud.google.com/anthos/clusters/docs/on-prem/1.7/concepts/logging-and-monitoring
+https://cloud.google.com/anthos/clusters/docs/on-prem/1.7/concepts/logging-and-monitoring.
