@@ -48,8 +48,11 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics Th
 What should you do?
 
 Create an automated testing script in production to detect failures as soon as they occur.
+
 Create a development environment with smaller server capacity and give access only to developers and testers.
+
 Secure the production environment to ensure that developers can't change it and set up one controlled update per year.
+
 Create a development environment for writing code and a test environment for configurations, experiments, and load testing.
 Answer(s): D
 
@@ -60,9 +63,13 @@ Creating a development environment for writing code and a test environment for c
 What roles should you assign? Choose 2 answers
 
 Operations Lead
+
 Engineering Lead
+
 Communications Lead
+
 Customer Impact Assessor
+
 External Customer Communications Lead
 Answer(s): A,C
 
@@ -75,8 +82,11 @@ The Operations Lead is responsible for managing the operational aspects of the i
 What should you do?
 
 Identify engineers responsible for the incident and escalate to their senior management.
+
 Ensure that test cases that catch errors of this type are run successfully before new software releases.
+
 Follow up with the employees who reviewed the changes and prescribe practices they should follow in the future.
+
 Design a policy that will require on-call teams to immediately call engineers and management to discuss a plan of action if an incident occurs.
 Answer(s): B
 
@@ -87,8 +97,11 @@ The best way to prevent severe incidents from happening in the future is to ensu
 What should you do?
 
 Import the Stackdriver Profiler package, and configure it to relay function timing data to Stackdriver for further analysis.
+
 Import the Stackdriver Debugger package, and configure the application to emit debug messages with timing information.
+
 Instrument the code using a timing library, and publish the metrics via a health check endpoint that is scraped by Stackdriver.
+
 Install an Application Performance Monitoring (APM) tool in both locations, and configure an export to a central data storage location for analysis.
 Answer(s): A
 
@@ -99,8 +112,11 @@ The easiest way to collect detailed metrics such as system resource utilization 
 What should you do?
 
 Use Cloud Build to trigger a Spinnaker pipeline.
+
 Use Cloud Pub/Sub to trigger a Spinnaker pipeline.
+
 Use a custom builder in Cloud Build to trigger a Jenkins pipeline.
+
 Use Cloud Pub/Sub to trigger a custom deployment service running in Google Kubernetes Engine (GKE).
 Answer(s): B
 
@@ -112,9 +128,13 @@ What should you do?
 Choose 2 answers
 
 Review current application metrics and add new ones as needed.
+
 Modify the code to capture additional information for user interaction.
+
 Analyze the web proxy logs only and capture response time of each request.
+
 Create new synthetic clients to simulate a user journey using the application.
+
 Use current and historic Request Logs to trace customer interaction with the application.
 Answer(s): D,E
 
@@ -126,8 +146,11 @@ The most effective ways to measure application reliability from a user perspecti
 After an update to the application, users report errors showing database timeout messages. The number of concurrent active users remained stable. You need to find the most probable cause of the database timeout.
 What should you do?
 Check the serial port logs of the Compute Engine instance.
+
 Use Stackdriver Profiler to visualize the resources utilization throughout the application.
+
 Determine whether there is an increased number of connections to the Cloud SQL instance.
+
 Use Cloud Security Scanner to see whether your Cloud SQL is under a Distributed Denial of Service (DDoS) attack.
 Answer(s): C
 
@@ -138,8 +161,11 @@ The most probable cause of the database timeout is an increased number of connec
 What should you do to enforce approvals?
 
 Configure the build system with protected branches that require pull request approval.
+
 Use an Admission Controller to verify that incoming requests originate from approved sources.
+
 Leverage Kubernetes Role-Based Access Control (RBAC) to restrict access to only approved users.
+
 Enable binary authorization inside the Kubernetes cluster and configure the build pipeline as an attestor.
 Answer(s): D
 
@@ -150,8 +176,11 @@ The keywords here is "developers or operators". Option A the operators could pus
 What metric should you use?
 
 flex/connections/current
+
 tcp_ssl_proxy/new_connections
+
 tcp_ssl_proxy/open_connections
+
 flex/instance/connections/current
 Answer(s): A
 
@@ -162,8 +191,11 @@ https://cloud.google.com/monitoring/api/metrics_gcp#gcp-appengine
 What should you do?
 
 File a bug with the development team so they can find the root cause of the crashing instance.
+
 Create a Managed Instance Group with a single instance and use health checks to determine the system status.
+
 Add a Load Balancer in front of the Compute Engine instance and use health checks to determine the system status.
+
 Create a Stackdriver Monitoring dashboard with SMS alerts to be able to start recreating the crashed instance promptly after it has crashed.
 Answer(s): B
 
@@ -171,8 +203,11 @@ Answer(s): B
 What should you do?
 
 Enable Cloud Security Scanner on the clusters.
+
 Enable Vulnerability Analysis on the Container Registry.
+
 Set up the Kubernetes Engine clusters as private clusters.
+
 Set up the Kubernetes Engine clusters with Binary Authorization.
 Answer(s): D
 
@@ -183,8 +218,11 @@ https://cloud.google.com/binary-authorization/docs/overview
 What Service Level Indicator {SLI) should you use to measure this?
 
 A quality SLI: the ratio of non-degraded responses to total responses
+
 An availability SLI: the ratio of healthy microservices to the total number of microservices
+
 A freshness SLI: the proportion of widgets that have been updated within the last 10 minutes
+
 A latency SLI: the ratio of microservice calls that complete in under 100 ms to the total number of microservice calls
 Answer(s): B
 
@@ -195,8 +233,11 @@ https://cloud.google.com/blog/products/gcp/available-or-not-that-is-the-question
 What should you do?
 
 Create a basic log filter matching userinfo, and then configure a log export in the Stackdriver console with Cloud Storage as a sink.
+
 Use a Fluentd filter plugin with the Stackdriver Agent to remove log entries containing userinfo, and then copy the entries to a Cloud Storage bucket.
+
 Create an advanced log filter matching userinfo, configure a log export in the Stackdriver console with Cloud Storage as a sink, and then configure a tog exclusion with userinfo as a filter.
+
 Use a Fluentd filter plugin with the Stackdriver Agent to remove log entries containing userinfo, create an advanced log filter matching userinfo, and then configure a log export in the Stackdriver console with Cloud Storage as a sink.
 Answer(s): B
 
@@ -207,8 +248,11 @@ https://medium.com/google-cloud/fluentd-filter-plugin-for-google-cloud-data-loss
 What should you do?
 
 Assign the Container Developer role to the Cloud Build service account.
+
 Specify the Container Developer role for Cloud Build in the cloudbuild.yaml file.
+
 Create a new service account with the Container Developer role and use it to run Cloud Build.
+
 Create a separate step in Cloud Build to retrieve service account credentials and pass these to kubectl.
 Answer(s): A
 
@@ -219,8 +263,11 @@ https://cloud.google.com/build/docs/deploying-builds/deploy-gke https://cloud.go
 Which application is suitable for preemptible VMs?
 
 A scalable in-memory caching system
+
 The organization's public-facing website
+
 A distributed, eventually consistent NoSQL database cluster with sufficient quorum
+
 A GPU-accelerated video rendering platform that retrieves and stores videos in a storage bucket
 Answer(s): D
 
@@ -231,8 +278,11 @@ https://cloud.google.com/compute/docs/instances/preemptible
 What should you do?
 
 Use the n1-highcpu-96 machine type in the configuration of the MIG.
+
 Monitor results of Stackdriver Trace to determine the required amount of resources.
+
 Validate that the resource requirements are within the available quota limits of each region.
+
 Deploy the service in one region and use a global load balancer to route traffic to this region.
 Answer(s): C
 
@@ -243,8 +293,11 @@ https://cloud.google.com/compute/quotas#understanding_quotas https://cloud.googl
 What should you do?
 
 Use Stackdriver Kubernetes Engine Monitoring.
+
 Use Prometheus to collect and aggregate logs per container, and then analyze the results in Grafana.
+
 Use the Stackdriver Monitoring API to create custom metrics, and then organize your containers using groups.
+
 Use Stackdriver Logging to export application logs to BigOuery. aggregate logs per container, and then analyze CPU and memory consumption.
 Answer(s): A
 
