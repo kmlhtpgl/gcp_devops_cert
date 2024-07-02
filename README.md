@@ -303,3 +303,102 @@ Answer(s): A
 
 Explanation:
 https://cloud.google.com/anthos/clusters/docs/on-prem/1.7/concepts/logging-and-monitoring.
+
+21) You are on-call for an infrastructure service that has a large number of dependent systems. You receive an alert indicating that the service is failing to serve most of its requests and all of its dependent systems with hundreds of thousands of users are affected. As part of your Site Reliability Engineering (SRE) incident management protocol, you declare yourself Incident Commander (IC) and pull in two experienced people from your team as Operations Lead (OLJ and Communications Lead (CL).
+What should you do next?
+
+Look for ways to mitigate user impact and deploy the mitigations to production.
+Contact the affected service owners and update them on the status of the incident.
+Establish a communication channel where incident responders and leads can communicate with each other.
+Start a postmortem, add incident information, circulate the draft internally, and ask internal stakeholders for input.
+Answer(s): A
+
+Explanation:
+https://sre.google/sre-book/managing-incidents/
+
+22) Your product is currently deployed in three Google Cloud Platform (GCP) zones with your users divided between the zones. You can fail over from one zone to another, but it causes a 10-minute service disruption for the affected users. You typically experience a database failure once per quarter and can detect it within five minutes. You are cataloging the reliability risks of a new real-time chat feature for your product. You catalog the following information for each risk:
+· Mean Time to Detect (MUD} in minutes
+· Mean Time to Repair (MTTR) in minutes
+· Mean Time Between Failure (MTBF) in days
+· User Impact Percentage
+The chat feature requires a new database system that takes twice as long to successfully fail over between zones. You want to account for the risk of the new database failing in one zone.
+What would be the values for the risk of database failover with the new system?
+
+MTTD: 5
+MTTR: 10
+MTBF: 90
+Impact: 33%
+MTTD:5
+MTTR: 20
+MTBF: 90
+Impact: 33%
+MTTD:5
+MTTR: 10
+MTBF: 90
+Impact 50%
+MTTD:5
+MTTR: 20
+MTBF: 90
+Impact: 50%
+Answer(s): B
+
+Explanation:
+https://www.atlassian.com/incident-management/kpis/common-metrics https://linkedin.github.io/school-of-sre/
+
+23) You are developing a strategy for monitoring your Google Cloud Platform (GCP) projects in production using Stackdriver Workspaces. One of the requirements is to be able to quickly identify and react to production environment issues without false alerts from development and staging projects. You want to ensure that you adhere to the principle of least privilege when providing relevant team members with access to Stackdriver Workspaces.
+What should you do?
+
+Grant relevant team members read access to all GCP production projects. Create Stackdriver workspaces inside each project.
+Grant relevant team members the Project Viewer IAM role on all GCP production projects. Create Slackdriver workspaces inside each project.
+Choose an existing GCP production project to host the monitoring workspace. Attach the production projects to this workspace. Grant relevant team members read access to the Stackdriver Workspace.
+Create a new GCP monitoring project, and create a Stackdriver Workspace inside it. Attach the production projects to this workspace. Grant relevant team members read access to the Stackdriver Workspace.
+Answer(s): D
+
+Explanation:
+"A Project can host many Projects and appear in many Projects, but it can only be used as the scoping project once. We recommend that you create a new Project for the purpose of having multiple Projects in the same scope."
+
+24) You support an application running on GCP and want to configure SMS notifications to your team for the most critical alerts in Stackdriver Monitoring. You have already identified the alerting policies you want to configure this for.
+What should you do?
+
+Download and configure a third-party integration between Stackdriver Monitoring and an SMS
+gateway. Ensure that your team members add their SMS/phone numbers to the external tool.
+Select the Webhook notifications option for each alerting policy, and configure it to use a third- party integration tool. Ensure that your team members add their SMS/phone numbers to the external tool.
+Ensure that your team members set their SMS/phone numbers in their Stackdriver Profile. Select the SMS notification option for each alerting policy and then select the appropriate SMS/phone numbers from the list.
+Configure a Slack notification for each alerting policy. Set up a Slack-to-SMS integration to send SMS messages when Slack messages are received. Ensure that your team members add their SMS/phone numbers to the external integration.
+Answer(s): C
+
+Explanation:
+https://cloud.google.com/monitoring/support/notification-options#creating_channels To configure SMS notifications, do the following:
+In the SMS section, click Add new and follow the instructions. Click Save.
+When you set up your alerting policy, select the SMS notification type and choose a verified phone number from the list.
+
+25) Your application artifacts are being built and deployed via a CI/CD pipeline. You want the CI/CD pipeline to securely access application secrets. You also want to more easily rotate secrets in case of a security breach.
+What should you do?
+
+Prompt developers for secrets at build time. Instruct developers to not store secrets at rest.
+Store secrets in a separate configuration file on Git. Provide select developers with access to the configuration file.
+Store secrets in Cloud Storage encrypted with a key from Cloud KMS. Provide the CI/CD pipeline with access to Cloud KMS via IAM.
+Encrypt the secrets and store them in the source code repository. Store a decryption key in a separate repository and grant your pipeline access to it
+Answer(s): C
+
+26) You support an application that stores product information in cached memory. For every cache miss, an entry is logged in Stackdriver Logging. You want to visualize how often a cache miss happens over time.
+What should you do?
+
+Link Stackdriver Logging as a source in Google Data Studio. Filler (he logs on the cache misses.
+Configure Stackdriver Profiler to identify and visualize when the cache misses occur based on the logs.
+Create a logs-based metric in Stackdriver Logging and a dashboard for that metric in Stackdriver Monitoring.
+Configure BigOuery as a sink for Stackdriver Logging. Create a scheduled query to filter the cache miss logs and write them to a separate table
+Answer(s): C
+
+Explanation:
+https://cloud.google.com/logging/docs/logs-based-metrics#counter-metric
+
+28) You are part of an organization that follows SRE practices and principles. You are taking over the management of a new service from the Development Team, and you conduct a Production Readiness Review (PRR). After the PRR analysis phase, you determine that the service cannot currently meet its Service Level Objectives (SLOs). You want to ensure that the service can meet its SLOs in production.
+
+What should you do next?
+
+Adjust the SLO targets to be achievable by the service so you can bring it into production.
+Notify the development team that they will have to provide production support for the service.
+Identify recommended reliability improvements to the service to be completed before handover.
+Bring the service into production with no SLOs and build them when you have collected operational data.
+Answer(s): C
