@@ -299,6 +299,7 @@ Use Prometheus to collect and aggregate logs per container, and then analyze the
 Use the Stackdriver Monitoring API to create custom metrics, and then organize your containers using groups.
 
 Use Stackdriver Logging to export application logs to BigOuery. aggregate logs per container, and then analyze CPU and memory consumption.
+
 Answer(s): A
 
 Explanation:
@@ -308,9 +309,13 @@ https://cloud.google.com/anthos/clusters/docs/on-prem/1.7/concepts/logging-and-m
 What should you do next?
 
 Look for ways to mitigate user impact and deploy the mitigations to production.
+
 Contact the affected service owners and update them on the status of the incident.
+
 Establish a communication channel where incident responders and leads can communicate with each other.
+
 Start a postmortem, add incident information, circulate the draft internally, and ask internal stakeholders for input.
+
 Answer(s): A
 
 Explanation:
@@ -328,18 +333,22 @@ MTTD: 5
 MTTR: 10
 MTBF: 90
 Impact: 33%
+
 MTTD:5
 MTTR: 20
 MTBF: 90
 Impact: 33%
+
 MTTD:5
 MTTR: 10
 MTBF: 90
 Impact 50%
+
 MTTD:5
 MTTR: 20
 MTBF: 90
 Impact: 50%
+
 Answer(s): B
 
 Explanation:
@@ -349,9 +358,13 @@ https://www.atlassian.com/incident-management/kpis/common-metrics https://linked
 What should you do?
 
 Grant relevant team members read access to all GCP production projects. Create Stackdriver workspaces inside each project.
+
 Grant relevant team members the Project Viewer IAM role on all GCP production projects. Create Slackdriver workspaces inside each project.
+
 Choose an existing GCP production project to host the monitoring workspace. Attach the production projects to this workspace. Grant relevant team members read access to the Stackdriver Workspace.
+
 Create a new GCP monitoring project, and create a Stackdriver Workspace inside it. Attach the production projects to this workspace. Grant relevant team members read access to the Stackdriver Workspace.
+
 Answer(s): D
 
 Explanation:
@@ -362,9 +375,13 @@ What should you do?
 
 Download and configure a third-party integration between Stackdriver Monitoring and an SMS
 gateway. Ensure that your team members add their SMS/phone numbers to the external tool.
+
 Select the Webhook notifications option for each alerting policy, and configure it to use a third- party integration tool. Ensure that your team members add their SMS/phone numbers to the external tool.
+
 Ensure that your team members set their SMS/phone numbers in their Stackdriver Profile. Select the SMS notification option for each alerting policy and then select the appropriate SMS/phone numbers from the list.
+
 Configure a Slack notification for each alerting policy. Set up a Slack-to-SMS integration to send SMS messages when Slack messages are received. Ensure that your team members add their SMS/phone numbers to the external integration.
+
 Answer(s): C
 
 Explanation:
@@ -376,18 +393,26 @@ When you set up your alerting policy, select the SMS notification type and choos
 What should you do?
 
 Prompt developers for secrets at build time. Instruct developers to not store secrets at rest.
+
 Store secrets in a separate configuration file on Git. Provide select developers with access to the configuration file.
+
 Store secrets in Cloud Storage encrypted with a key from Cloud KMS. Provide the CI/CD pipeline with access to Cloud KMS via IAM.
+
 Encrypt the secrets and store them in the source code repository. Store a decryption key in a separate repository and grant your pipeline access to it
+
 Answer(s): C
 
 26) You support an application that stores product information in cached memory. For every cache miss, an entry is logged in Stackdriver Logging. You want to visualize how often a cache miss happens over time.
 What should you do?
 
 Link Stackdriver Logging as a source in Google Data Studio. Filler (he logs on the cache misses.
+
 Configure Stackdriver Profiler to identify and visualize when the cache misses occur based on the logs.
+
 Create a logs-based metric in Stackdriver Logging and a dashboard for that metric in Stackdriver Monitoring.
+
 Configure BigOuery as a sink for Stackdriver Logging. Create a scheduled query to filter the cache miss logs and write them to a separate table
+
 Answer(s): C
 
 Explanation:
@@ -398,7 +423,43 @@ https://cloud.google.com/logging/docs/logs-based-metrics#counter-metric
 What should you do next?
 
 Adjust the SLO targets to be achievable by the service so you can bring it into production.
+
 Notify the development team that they will have to provide production support for the service.
+
 Identify recommended reliability improvements to the service to be completed before handover.
+
 Bring the service into production with no SLOs and build them when you have collected operational data.
+
 Answer(s): C
+
+29) You support a multi-region web service running on Google Kubernetes Engine (GKE) behind a Global HTTP'S Cloud Load Balancer (CLB). For legacy reasons, user requests first go through a third-party Content Delivery Network (CDN). which then routes traffic to the CLB. You have already implemented an availability Service Level Indicator (SLI) at the CLB level. However, you want to increase coverage in case of a potential load balancer misconfiguration. CDN failure, or other global networking catastrophe.
+Where should you measure this new SLI? Choose 2 answers
+
+Your application servers' logs
+
+Instrumentation coded directly in the client
+
+Metrics exported from the application servers
+
+GKE health checks for your application servers
+
+A synthetic client that periodically sends simulated user requests
+
+Answer(s): B,E
+
+30) Your application images are built using Cloud Build and pushed to Google Container Registry (GCR). You want to be able to specify a particular version of your application for deployment based on the release version tagged in source control.
+What should you do when you push the image?
+
+Reference the image digest in the source control tag.
+
+Supply the source control tag as a parameter within the image name.
+
+Use Cloud Build to include the release version tag in the application image.
+
+Use GCR digest versioning to match the image to the tag in source control.
+
+Answer(s): B
+
+Explanation:
+https://cloud.google.com/container-registry/docs/pushing-and-pulling
+
